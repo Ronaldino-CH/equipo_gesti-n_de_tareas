@@ -20,7 +20,7 @@ loginForm.addEventListener("submit", (event) => {
 
   // Login temporal: reemplazar por llamada al backend.
   if (email === MOCK_USER.email && password === MOCK_USER.password) {
-    sessionStorage.setItem("authUser", JSON.stringify({ email }));
+    sessionStorage.setItem("authUser", JSON.stringify({ email, loginAt: new Date().toISOString() }));
     showMessage("Inicio de sesion exitoso.", "success");
     return;
   }
