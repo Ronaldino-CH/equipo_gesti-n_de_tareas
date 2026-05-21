@@ -1,0 +1,22 @@
+name: Frontend CI
+
+on:
+  push:
+    branches:
+      - develop
+      - master
+
+pull_request:
+  branches:
+    - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Mostrar archivos
+        run: ls
